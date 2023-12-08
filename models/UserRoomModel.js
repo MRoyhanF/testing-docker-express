@@ -1,7 +1,7 @@
-import { Sequelize } from "sequelize";
-import db from "../config/Database.js";
-import Users from "./UserModel.js";
-import Room from "./RoomModel.js";
+const { Sequelize } = require ('sequelize');
+const db = require ('../config/Database.js');
+const Users = require ('./UserModel.js');
+const Room = require ('./RoomModel.js');
 
 const {DataTypes} = Sequelize;
 
@@ -45,4 +45,5 @@ const UserRoom = db.define('user_room', {
  UserRoom.belongsTo(Room, {foreignKey: 'roomId'});
 //  UserRoom.belongsTo(Users, {foreignKey: 'userId'});
  
- export default UserRoom;
+module.exports = UserRoom;
+//  export default UserRoom;

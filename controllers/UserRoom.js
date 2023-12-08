@@ -1,21 +1,23 @@
-import UserRoom from "../models/UserRoomModel.js";
+const UserRoom = require ('../models/UserRoomModel.js');
 
-export const getUsersRoom = (req, res) =>{
-
-}
-
-export const getUserRoomById = (req, res) =>{
+const getUsersRoom = (req, res) =>{
 
 }
 
-export const createUserRoom = (req, res) =>{
+const getUserRoomById = (req, res) =>{
 
 }
 
-export const updateUserRoom = (req, res) =>{
+const createUserRoom = (req, res) =>{
 
 }
 
-export const deleteUserRoom = (req, res) =>{
+const updateUserRoom = (req, res) =>{
 
 }
+
+const deleteUserRoom = (req, res) =>{
+
+}
+
+module.exports = {getUsersRoom, getUserRoomById, createUserRoom, updateUserRoom, deleteUserRoom}

@@ -1,11 +1,11 @@
-import express from "express";
-import {
+const express = require ('express');
+const {
     getUsersRoom,
     getUserRoomById,
     createUserRoom,
     updateUserRoom,
     deleteUserRoom
-} from "../controllers/UserRoom.js"
+} = require ('../controllers/UserRoom.js');
 // import { verifyUser, adminOnly } from "../middleware/AuthUser.js";
 
 const router = express.Router();
@@ -22,4 +22,4 @@ router.delete('/user/Room/:id', deleteUserRoom);
 // router.patch('/users/:id', verifyUser, adminOnly, updateUser);
 // router.delete('/users/:id', verifyUser, adminOnly, deleteUser);
 
-export default router;
+module.exports = router;

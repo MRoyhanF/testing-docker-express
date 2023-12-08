@@ -1,7 +1,12 @@
-import { Sequelize } from "sequelize";
-import db from "../config/Database.js";
-import Users from "./UserModel.js";
-import UserRoom from "./UserRoomModel.js";
+const { Sequelize } = require ('sequelize');
+const db = require ('../config/Database.js');
+const Users = require ('./UserModel.js');
+const UserRoom = require ('./UserRoomModel.js');
+
+// import { Sequelize } from "sequelize";
+// import db from "../config/Database.js";
+// import Users from "./UserModel.js";
+// import UserRoom from "./UserRoomModel.js";
 
 const {DataTypes} = Sequelize;
 
@@ -60,4 +65,6 @@ const Assesment = db.define('assesment', {
  Assesment.belongsTo(Users, {foreignKey: 'userId'});
  Assesment.belongsTo(UserRoom, {foreignKey: 'userRoomId'});
 
- export default Assesment;
+module.exports = Assesment;
+
+// export default Assesment;

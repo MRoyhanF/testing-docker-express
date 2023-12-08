@@ -1,8 +1,8 @@
-import Posting from "../models/PostingModel.js";
-import User from "../models/UserModel.js"
+const Posting = require ('../models/PostingModel.js');
+const User = require ('../models/UserModel.js');
 
 // Start Get All Postingan
-export const getPosting = async(req, res) =>{
+const getPosting = async(req, res) =>{
     try {
         let response;
         if (req){
@@ -22,7 +22,7 @@ export const getPosting = async(req, res) =>{
 // End Get All Postingan
 
 // Start Create Postingan
-export const createPosting = async(req, res) =>{
+const createPosting = async(req, res) =>{
     const {posting} = req.body;
     try {
         await Posting.create({
@@ -37,7 +37,7 @@ export const createPosting = async(req, res) =>{
 // End Create Postingan
 
 // Start Delete Postingan
-export const deletePosting = async(req, res) =>{
+const deletePosting = async(req, res) =>{
     try {
         const postingan = await Posting.findOne({
             where: {
@@ -66,3 +66,5 @@ export const deletePosting = async(req, res) =>{
     }
 }
 // End Delete Postingan
+
+module.exports = {getPosting, createPosting, deletePosting};

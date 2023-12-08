@@ -1,8 +1,12 @@
-import User from "../models/UserModel.js";
-import argon2 from "argon2";
+const User = require ('../models/UserModel.js');
+const bcrypt = require ('bcrypt');
+
+// import User from "../models/UserModel.js";
+// import bcrypt from "bcrypt";
+
 
 // start get all user
-export const getUsers = async(req, res) =>{
+const getUsers = async(req, res) =>{
     try {
         const response = await User.findAll({
             attributes: ['uuid','name','email','role']
@@ -15,7 +19,7 @@ export const getUsers = async(req, res) =>{
 // end get all user
 
 // start get one user
-export const getUserById = async(req, res) =>{
+const getUserById = async(req, res) =>{
     try {
         const response = await User.findOne({
             attributes: ['uuid','name','email','role'],
@@ -31,10 +35,10 @@ export const getUserById = async(req, res) =>{
 // end set one user
 
 // start create user
-export const createUser = async(req, res) =>{
+const createUser = async(req, res) =>{
     const {name, email, password, confPassword, role}= req.body
     if(password !== confPassword) return res.status(400).json({msg : "Password dan Confirm Password tidak cocok"});
-    const hashPassword = await argon2.hash(password);
+    const hashPassword = await bcrypt.hash(password, 10);
     try {
         await User.create({
             name: name,
@@ -50,7 +54,7 @@ export const createUser = async(req, res) =>{
 // end create user
 
 // start update user
-export const updateUser = async(req, res) =>{
+const updateUser = async(req, res) =>{
     const user = await User.findOne({
         where: {
             uuid: req.params.id
@@ -62,7 +66,7 @@ export const updateUser = async(req, res) =>{
     if(password === "" || password === null){
         hashPassword = user.password
     }else{
-        hashPassword = await argon2.hash(password);
+        hashPassword = await bcrypt.hash(password, 10);
     }
     if(password !== confPassword) return res.status(400).json({msg : "Password dan Confirm Password tidak cocok"});
     try {
@@ -84,7 +88,7 @@ export const updateUser = async(req, res) =>{
 // end update user
 
 // start delete user
-export const deleteUser = async(req, res) =>{
+const deleteUser = async(req, res) =>{
     const user = await User.findOne({
         where: {
             uuid: req.params.id
@@ -103,3 +107,5 @@ export const deleteUser = async(req, res) =>{
     }  
 }
 // end delete user
+
+module.exports = { getUsers, getUserById, createUser, updateUser, deleteUser };

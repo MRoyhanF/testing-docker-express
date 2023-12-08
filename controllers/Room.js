@@ -1,21 +1,23 @@
-import Room from "../models/RoomModel.js";
+const Room = require ('../models/RoomModel.js');
 
-export const getRoom = (req, res) =>{
-
-}
-
-export const getRoomById = (req, res) =>{
+const getRoom = (req, res) =>{
 
 }
 
-export const createRoom = (req, res) =>{
+const getRoomById = (req, res) =>{
 
 }
 
-export const updateRoom = (req, res) =>{
+const createRoom = (req, res) =>{
 
 }
 
-export const deleteRoom = (req, res) =>{
+const updateRoom = (req, res) =>{
 
 }
+
+const deleteRoom = (req, res) =>{
+
+}
+
+module.exports = {getRoom, getRoomById, createRoom, updateRoom, deleteRoom}

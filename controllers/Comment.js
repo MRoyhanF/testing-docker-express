@@ -1,10 +1,10 @@
-import Comment from "../models/CommentModel.js";
-import User from "../models/UserModel.js"
-import Posting from "../models/PostingModel.js";
-import { Op } from "sequelize";
+const Comment = require ('../models/CommentModel.js');
+const User = require ('../models/UserModel.js');
+const Posting = require ('../models/PostingModel.js');
+const { Op } = require ('sequelize');
 
 // 1- untuk menempilkan semua koment pada postingan
-export const getCommentByIdPosting = async(req, res) =>{
+const getCommentByIdPosting = async(req, res) =>{
     try {
         const comment = await Posting. findOne({
             where: {
@@ -29,7 +29,7 @@ export const getCommentByIdPosting = async(req, res) =>{
 }
 
 // 2- untuk membuat comentar pada postingan
-export const createComment = async(req, res) =>{
+const createComment = async(req, res) =>{
     const {comment} = req.body;
     const comm = req.params.id;
     try {
@@ -51,7 +51,7 @@ export const createComment = async(req, res) =>{
 }
 
 // 3- menghapus komentar pada postingan orang
-export const deleteComment = async(req, res) =>{
+const deleteComment = async(req, res) =>{
     try {
         const comment = await Comment.findOne({
             where: {
@@ -80,5 +80,6 @@ export const deleteComment = async(req, res) =>{
     }
 }
 
+module.exports = {getCommentByIdPosting, createComment, deleteComment};
 
 

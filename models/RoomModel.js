@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
-import db from "../config/Database.js";
+const { Sequelize } = require ('sequelize');
+const db = require ('../config/Database.js');
 
 const {DataTypes} = Sequelize;
 
@@ -31,4 +31,4 @@ const Room = db.define('room', {
     freezeTableName: true
  });
 
- export default Room;
+ module.exports = Room;

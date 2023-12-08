@@ -1,7 +1,7 @@
-import { Sequelize } from "sequelize";
-import db from "../config/Database.js";
-import Users from "./UserModel.js"
-import Posting from "./PostingModel.js";
+const { Sequelize, Model } = require ('sequelize');
+const db = require ('../config/Database.js');
+const Users = require ('./UserModel.js');
+const Posting = require ('./PostingModel.js');
 
 const {DataTypes} = Sequelize;
 
@@ -45,4 +45,4 @@ Posting.hasMany(Comment)
 Comment.belongsTo(Users, {foreignKey: 'userId'})
 Comment.belongsTo(Posting, {foreignKey: 'postingId'})
 
- export default Comment;
+module.exports = Comment;

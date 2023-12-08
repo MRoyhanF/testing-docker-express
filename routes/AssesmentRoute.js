@@ -1,19 +1,19 @@
-import express from "express";
-import {
+const express = require ('express');
+const {
     getAssesments,
     createAssesment,
-    getAssesmentByIdRoom,
+    // getAssesmentByIdRoom,
     deleteAssesment,
-    getAssesmentByRoomAndUser
-} from "../controllers/Assesment.js"
-import { verifyUser } from "../middleware/AuthUser.js";
+    // getAssesmentByRoomAndUser
+} = require ('../controllers/Assesment.js');
+const { verifyUser } = require ('../middleware/AuthUser.js');
 
 const router = express.Router();
 
 router.get('/Assesments', verifyUser, getAssesments);
 router.post('/Assesment/', verifyUser, createAssesment);
-router.get('/Assesment/Room/:id', verifyUser, getAssesmentByIdRoom);
+// router.get('/Assesment/Room/:id', verifyUser, getAssesmentByIdRoom);
 router.delete('/Assesment/:id', verifyUser, deleteAssesment);
-router.get('/Assesment/Room/User/:id', verifyUser, getAssesmentByRoomAndUser);
+// router.get('/Assesment/Room/User/:id', verifyUser, getAssesmentByRoomAndUser);
 
-export default router;
+module.exports = router;

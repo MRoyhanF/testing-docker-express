@@ -1,10 +1,10 @@
-import Assesment from "../models/AssesmentModel.js";
-import User from "../models/UserModel.js";
-import { Op } from "sequelize";
+const Assesment = require ('../models/AssesmentModel.js');
+const User = require ('../models/UserModel.js');
+const { Op } = require ('sequelize');
 
 // 1 = ambil data per Id untuk histori user
 // start get all Assesment
-export const getAssesments = async(req, res) =>{
+const getAssesments = async(req, res) =>{
     try {
         let response;
         if(req.role === "admin"){
@@ -36,7 +36,7 @@ export const getAssesments = async(req, res) =>{
 
 // 2 = diguanakn untuk mengambil data dari model ml
 // start create Assesment
-export const createAssesment = async(req, res) =>{
+const createAssesment = async(req, res) =>{
     const {type_assesment, value_assesment, result} = req.body;
     try {
         await Assesment.create({
@@ -52,17 +52,10 @@ export const createAssesment = async(req, res) =>{
 }
 // End create Assesment
 
-// 3 = digunakan untuk monitoring assesment member room
-// Start mencari assesmeny dari id room
-export const getAssesmentByIdRoom = async(req, res) =>{
 
-}
-// End mencari assesmeny dari id room
-
-
-// 4 = digunakan untuk menghapus histori assesment data
+// 3 = digunakan untuk menghapus histori assesment data
 // Start Delete assesment
-export const deleteAssesment = async(req, res) =>{
+const deleteAssesment = async(req, res) =>{
     try {
         const assesment = await Assesment.findOne({
             where: {
@@ -70,7 +63,7 @@ export const deleteAssesment = async(req, res) =>{
             }
         });
         if(!assesment) return res.status(404).json({msg : "Data tidak ditemukan"})
-        const {type_assesment, value_assesment, result} = req.body;
+        // const {type_assesment, value_assesment, result} = req.body;
         if(req.role === "admin"){
             await Assesment.destroy({
                 where: {
@@ -92,9 +85,4 @@ export const deleteAssesment = async(req, res) =>{
 }
 // End Delete assesment
 
-// 5 = digunakan untuk mengambil data pribadi user di room 
-// Start mencari assesment per id room dan user
-export const getAssesmentByRoomAndUser = (req, res) =>{
-
-}
-// Start mencari assesment per id room dan user
+module.exports = { getAssesments, createAssesment, deleteAssesment };
