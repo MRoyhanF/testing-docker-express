@@ -1,16 +1,16 @@
-const express = require ('express');
-const cors = require ('cors');
-const session = require ('express-session');
-const dotenv = require ('dotenv');
-const db = require ('./config/Database.js');
-const SequelizeStore = require ('connect-session-sequelize');
-const UserRoute = require ('./routes/UserRoute.js');
-const AssesmentRoute = require ('./routes/AssesmentRoute.js');
-const PostingRoute = require ('./routes/PostingRoute.js');
-const CommentRoute = require ('./routes/CommentRoute.js');
-const RoomRoute = require ('./routes/RoomRoute.js');
-const UserRoomRoute = require ('./routes/UserRoomRoute.js');
-const AuthRoute = require ('./routes/AuthRoute.js');
+const express = require('express');
+const cors = require('cors');
+const session = require('express-session');
+const dotenv = require('dotenv');
+const db = require('./config/Database.js');
+const SequelizeStore = require('connect-session-sequelize');
+const UserRoute = require('./routes/UserRoute.js');
+const AssesmentRoute = require('./routes/AssesmentRoute.js');
+const PostingRoute = require('./routes/PostingRoute.js');
+const CommentRoute = require('./routes/CommentRoute.js');
+const RoomRoute = require('./routes/RoomRoute.js');
+const UserRoomRoute = require('./routes/UserRoomRoute.js');
+const AuthRoute = require('./routes/AuthRoute.js');
 
 dotenv.config();
 

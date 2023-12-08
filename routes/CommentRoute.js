@@ -1,10 +1,10 @@
-const express = require ('express');
+const express = require('express');
 const {
     getCommentByIdPosting,
     createComment,
     deleteComment
-} = require ('../controllers/Comment.js');
-const { verifyUser } = require ('../middleware/AuthUser.js');
+} = require('../controllers/Comment.js');
+const { verifyUser } = require('../middleware/AuthUser.js');
 
 const router = express.Router();
 

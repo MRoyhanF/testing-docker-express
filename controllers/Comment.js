@@ -1,7 +1,7 @@
-const Comment = require ('../models/CommentModel.js');
-const User = require ('../models/UserModel.js');
-const Posting = require ('../models/PostingModel.js');
-const { Op } = require ('sequelize');
+const Comment = require('../models/CommentModel.js');
+const User = require('../models/UserModel.js');
+const Posting = require('../models/PostingModel.js');
+const { Op } = require('sequelize');
 
 // 1- untuk menempilkan semua koment pada postingan
 const getCommentByIdPosting = async(req, res) =>{

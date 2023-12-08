@@ -1,5 +1,5 @@
-const express = require ('express');
-const {Login, logOut, Me} = require ('../controllers/Auth.js');
+const express = require('express');
+const {Login, logOut, Me} = require('../controllers/Auth.js');
 
 // import express from "express";
 // import {Login, logOut, Me} from "../controllers/Auth.js"

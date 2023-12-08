@@ -1,7 +1,7 @@
-const { Sequelize, Model } = require ('sequelize');
-const db = require ('../config/Database.js');
-const Users = require ('./UserModel.js');
-const Posting = require ('./PostingModel.js');
+const { Sequelize} = require('sequelize');
+const db = require('../config/Database.js');
+const Users = require('./UserModel.js');
+const Posting = require('./PostingModel.js');
 
 const {DataTypes} = Sequelize;
 

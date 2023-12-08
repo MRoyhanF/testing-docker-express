@@ -1,4 +1,4 @@
-const Room = require ('../models/RoomModel.js');
+const Room = require('../models/RoomModel.js');
 
 const getRoom = (req, res) =>{
 

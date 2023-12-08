@@ -1,4 +1,4 @@
-const User = require ('../models/UserModel.js');
+const User = require('../models/UserModel.js');
 // import User from "../models/UserModel.js"
 
 // validasi login

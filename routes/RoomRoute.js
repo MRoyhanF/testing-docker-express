@@ -1,11 +1,11 @@
-const express = require ('express');
+const express = require('express');
 const {
     getRoom,
     getRoomById,
     createRoom,
     updateRoom,
     deleteRoom
-} = require ('../controllers/Room.js');
+} = require('../controllers/Room.js');
 // import { verifyUser, adminOnly } from "../middleware/AuthUser.js";
 
 const router = express.Router();

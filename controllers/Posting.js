@@ -1,5 +1,5 @@
-const Posting = require ('../models/PostingModel.js');
-const User = require ('../models/UserModel.js');
+const Posting = require('../models/PostingModel.js');
+const User = require('../models/UserModel.js');
 
 // Start Get All Postingan
 const getPosting = async(req, res) =>{

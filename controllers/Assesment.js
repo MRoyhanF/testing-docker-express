@@ -1,6 +1,6 @@
-const Assesment = require ('../models/AssesmentModel.js');
-const User = require ('../models/UserModel.js');
-const { Op } = require ('sequelize');
+const Assesment = require('../models/AssesmentModel.js');
+const User = require('../models/UserModel.js');
+const { Op } = require('sequelize');
 
 // 1 = ambil data per Id untuk histori user
 // start get all Assesment

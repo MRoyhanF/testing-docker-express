@@ -1,4 +1,4 @@
-const UserRoom = require ('../models/UserRoomModel.js');
+const UserRoom = require('../models/UserRoomModel.js');
 
 const getUsersRoom = (req, res) =>{
 

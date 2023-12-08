@@ -1,5 +1,5 @@
-const User = require ('../models/UserModel.js');
-const bcrypt = require ('bcrypt');
+const User = require('../models/UserModel.js');
+const bcrypt = require('bcrypt');
 
 // import User from "../models/UserModel.js";
 // import bcrypt from "bcrypt";

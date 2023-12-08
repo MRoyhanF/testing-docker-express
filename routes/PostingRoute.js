@@ -1,10 +1,10 @@
-const express = require ('express');
+const express = require('express');
 const {
     getPosting,
     createPosting,
     deletePosting
-} = require ('../controllers/Posting.js');
-const { verifyUser, adminOnly } = require ('../middleware/AuthUser.js');
+} = require('../controllers/Posting.js');
+const { verifyUser, adminOnly } = require('../middleware/AuthUser.js');
 
 const router = express.Router();
 

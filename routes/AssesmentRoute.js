@@ -1,12 +1,12 @@
-const express = require ('express');
+const express = require('express');
 const {
     getAssesments,
     createAssesment,
     // getAssesmentByIdRoom,
     deleteAssesment,
     // getAssesmentByRoomAndUser
-} = require ('../controllers/Assesment.js');
-const { verifyUser } = require ('../middleware/AuthUser.js');
+} = require('../controllers/Assesment.js');
+const { verifyUser } = require('../middleware/AuthUser.js');
 
 const router = express.Router();
 

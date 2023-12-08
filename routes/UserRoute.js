@@ -1,12 +1,12 @@
-const express = require ('express');
+const express = require('express');
 const {
     getUsers,
     getUserById,
     createUser,
     updateUser,
     deleteUser
-} = require ('../controllers/Users.js');
-const { verifyUser, adminOnly } = require ('../middleware/AuthUser.js');
+} = require('../controllers/Users.js');
+const { verifyUser, adminOnly } = require('../middleware/AuthUser.js');
 
 // import express from "express";
 // import {
